@@ -50,6 +50,7 @@ export function FileDropper({ accept, multiple, size = '2', disabled, onFilesSel
         onDragLeave={() => setDragging(false)}
         onDrop={onDrop}
         role="button"
+        aria-disabled={disabled || undefined}
         tabIndex={disabled ? -1 : 0}
         onKeyDown={(e) => { if ((e.key === 'Enter' || e.key === ' ') && !disabled) { e.preventDefault(); inputRef.current?.click(); } }}
       >
