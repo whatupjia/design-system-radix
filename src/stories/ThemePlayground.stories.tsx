@@ -1,5 +1,15 @@
 import type { Meta } from '@storybook/react-vite';
-import { ThemePanel, Flex, Card, Heading, Text, Button, Badge, TextField, Switch } from '@radix-ui/themes';
+import {
+  ThemePanel,
+  Flex,
+  Card,
+  Heading,
+  Text,
+  Button,
+  Badge,
+  TextField,
+  Switch,
+} from '@radix-ui/themes';
 
 const meta = { title: 'Playground/Theme Panel' } satisfies Meta;
 export default meta;
@@ -19,11 +29,19 @@ export const Default = {
             <Heading size="4">Sample card</Heading>
             <Badge color="green">Live</Badge>
           </Flex>
-          <Text size="2" color="gray">Tweak the panel on the right — this updates instantly.</Text>
+          <Text size="2" color="gray">
+            Tweak the panel on the right — this updates instantly.
+          </Text>
           <TextField.Root placeholder="Type something…" />
-          <Text as="label" size="2"><Flex gap="2" align="center"><Switch defaultChecked /> Enabled</Flex></Text>
+          <Text as="label" size="2">
+            <Flex gap="2" align="center">
+              <Switch defaultChecked /> Enabled
+            </Flex>
+          </Text>
           <Flex gap="3" justify="end">
-            <Button variant="soft" color="gray">Cancel</Button>
+            <Button variant="soft" color="gray">
+              Cancel
+            </Button>
             <Button>Save</Button>
           </Flex>
         </Flex>

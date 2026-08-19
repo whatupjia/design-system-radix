@@ -1,6 +1,17 @@
 import {
-  Container, Section, Flex, Heading, Text, Card, Button, TextField,
-  Select, Switch, Badge, Callout, Separator,
+  Container,
+  Section,
+  Flex,
+  Heading,
+  Text,
+  Card,
+  Button,
+  TextField,
+  Select,
+  Switch,
+  Badge,
+  Callout,
+  Separator,
 } from '@radix-ui/themes';
 
 /**
@@ -27,12 +38,16 @@ export default function App() {
           <Card>
             <Flex direction="column" gap="4" p="2">
               <Flex direction="column" gap="1">
-                <Text as="label" size="2" weight="medium">Project name</Text>
+                <Text as="label" size="2" weight="medium">
+                  Project name
+                </Text>
                 <TextField.Root placeholder="Bioanalytical platform" />
               </Flex>
 
               <Flex direction="column" gap="1">
-                <Text as="label" size="2" weight="medium">Visibility</Text>
+                <Text as="label" size="2" weight="medium">
+                  Visibility
+                </Text>
                 <Select.Root defaultValue="team">
                   <Select.Trigger />
                   <Select.Content>
@@ -52,7 +67,9 @@ export default function App() {
               <Separator size="4" />
 
               <Flex gap="3" justify="end">
-                <Button variant="soft" color="gray">Cancel</Button>
+                <Button variant="soft" color="gray">
+                  Cancel
+                </Button>
                 <Button>Create project</Button>
               </Flex>
             </Flex>

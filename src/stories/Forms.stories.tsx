@@ -1,7 +1,19 @@
 import type { Meta } from '@storybook/react-vite';
 import {
-  Flex, Text, TextField, TextArea, Select, Checkbox, CheckboxGroup, CheckboxCards,
-  RadioGroup, RadioCards, Switch, Slider, SegmentedControl, Box,
+  Flex,
+  Text,
+  TextField,
+  TextArea,
+  Select,
+  Checkbox,
+  CheckboxGroup,
+  CheckboxCards,
+  RadioGroup,
+  RadioCards,
+  Switch,
+  Slider,
+  SegmentedControl,
+  Box,
 } from '@radix-ui/themes';
 
 const meta = { title: 'Radix/Forms' } satisfies Meta;
@@ -51,12 +63,20 @@ export const SelectableCards = {
   render: () => (
     <Flex direction="column" gap="4" width="420px">
       <CheckboxCards.Root defaultValue={['1']} columns="2">
-        <CheckboxCards.Item value="1"><Text weight="bold">Analytics</Text></CheckboxCards.Item>
-        <CheckboxCards.Item value="2"><Text weight="bold">Billing</Text></CheckboxCards.Item>
+        <CheckboxCards.Item value="1">
+          <Text weight="bold">Analytics</Text>
+        </CheckboxCards.Item>
+        <CheckboxCards.Item value="2">
+          <Text weight="bold">Billing</Text>
+        </CheckboxCards.Item>
       </CheckboxCards.Root>
       <RadioCards.Root defaultValue="1" columns="2">
-        <RadioCards.Item value="1"><Text weight="bold">Monthly</Text></RadioCards.Item>
-        <RadioCards.Item value="2"><Text weight="bold">Annual</Text></RadioCards.Item>
+        <RadioCards.Item value="1">
+          <Text weight="bold">Monthly</Text>
+        </RadioCards.Item>
+        <RadioCards.Item value="2">
+          <Text weight="bold">Annual</Text>
+        </RadioCards.Item>
       </RadioCards.Root>
     </Flex>
   ),
@@ -65,9 +85,19 @@ export const SelectableCards = {
 export const TogglesAndSliders = {
   render: () => (
     <Flex direction="column" gap="4" width="300px">
-      <Text as="label" size="2"><Flex gap="2" align="center"><Switch defaultChecked /> Notifications</Flex></Text>
-      <Text as="label" size="2"><Flex gap="2" align="center"><Checkbox defaultChecked /> I agree</Flex></Text>
-      <Box><Slider defaultValue={[40]} /></Box>
+      <Text as="label" size="2">
+        <Flex gap="2" align="center">
+          <Switch defaultChecked /> Notifications
+        </Flex>
+      </Text>
+      <Text as="label" size="2">
+        <Flex gap="2" align="center">
+          <Checkbox defaultChecked /> I agree
+        </Flex>
+      </Text>
+      <Box>
+        <Slider defaultValue={[40]} />
+      </Box>
       <SegmentedControl.Root defaultValue="list">
         <SegmentedControl.Item value="list">List</SegmentedControl.Item>
         <SegmentedControl.Item value="grid">Grid</SegmentedControl.Item>
