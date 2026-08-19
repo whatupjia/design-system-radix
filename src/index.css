@@ -1,0 +1,3 @@
+/* Radix Themes provides styling via @radix-ui/themes/styles.css (imported
+   in main.tsx). Keep this file minimal — no competing global styles. */
+body { margin: 0; }
