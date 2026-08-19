@@ -1,0 +1,41 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as FileDropperStories from './FileDropper.stories';
+
+<Meta of={FileDropperStories} />
+
+# FileDropper
+
+A drag-and-drop file input with click-to-browse. Fills a gap in Radix
+Themes, which ships no file upload. Styled with Radix variables, so its
+hover and active-drag states use the Theme's accent color.
+
+## When to use
+- Anywhere the user brings a file: bulk/CSV import, attachments, document or
+  image upload.
+
+## When not to use
+- **A single tiny value with no file** — that's a `TextField`.
+- If you need directory drop, image previews, or client-side validation
+  today, wrap `react-dropzone` instead (see RFC 0001, Alternatives).
+
+## Behavior
+Drop a file on the zone, or click/press Enter to open the native picker. The
+selected file appears as a removable chip. The component reports the raw
+`FileList` via `onFilesSelected` — **it does not upload**; transport and
+validation are the app's responsibility (kept unopinionated on purpose).
+
+## Do / Don't
+- **Do** set `accept` (e.g. `.csv`) so the OS picker filters for you.
+- **Don't** rely on `accept` for security — validate the emitted files in
+  the consumer too.
+
+## Accessibility
+The dashed zone is focusable (`role="button"`, Enter/Space opens the
+picker), and a real `<input type="file">` stays in the DOM for assistive
+tech and form semantics.
+
+## Examples
+<Canvas of={FileDropperStories.Default} />
+
+## Props
+<Controls />
