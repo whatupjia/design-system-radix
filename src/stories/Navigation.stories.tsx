@@ -13,9 +13,15 @@ export const TabsExample = {
         <Tabs.Trigger value="settings">Settings</Tabs.Trigger>
       </Tabs.List>
       <Box pt="3">
-        <Tabs.Content value="overview"><Text size="2">Overview panel.</Text></Tabs.Content>
-        <Tabs.Content value="activity"><Text size="2">Activity panel.</Text></Tabs.Content>
-        <Tabs.Content value="settings"><Text size="2">Settings panel.</Text></Tabs.Content>
+        <Tabs.Content value="overview">
+          <Text size="2">Overview panel.</Text>
+        </Tabs.Content>
+        <Tabs.Content value="activity">
+          <Text size="2">Activity panel.</Text>
+        </Tabs.Content>
+        <Tabs.Content value="settings">
+          <Text size="2">Settings panel.</Text>
+        </Tabs.Content>
       </Box>
     </Tabs.Root>
   ),
@@ -24,7 +30,9 @@ export const TabsExample = {
 export const TabNavExample = {
   render: () => (
     <TabNav.Root>
-      <TabNav.Link href="#" active>Home</TabNav.Link>
+      <TabNav.Link href="#" active>
+        Home
+      </TabNav.Link>
       <TabNav.Link href="#">Projects</TabNav.Link>
       <TabNav.Link href="#">Settings</TabNav.Link>
     </TabNav.Root>

@@ -1,32 +1,65 @@
-# React + TypeScript + Vite
+# design-system-radix
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React design system built on [Radix Themes](https://www.radix-ui.com/themes),
+documented in Storybook and ready to prototype with. Radix provides the
+styled, accessible base components; this repo adds a small number of
+components Radix doesn't ship (see `Custom/` in Storybook) and the patterns
+that compose them.
 
-Currently, two official plugins are available:
+## Quick start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run storybook   # component gallery + docs at http://localhost:6007
+npm run dev         # the demo app at http://localhost:5173
+npm run build       # type-check + production build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## What's inside
+
+- **`Radix/*`** (Storybook) — the full Radix Themes catalog, grouped by
+  category (Typography, Layout, Forms, Actions, Overlays, Navigation, Data
+  Display).
+- **`Custom/*`** — components that fill Radix gaps (e.g. `Stepper`,
+  `FileDropper`), styled with Radix theme variables so they follow the
+  active accent color and light/dark mode.
+- **`Patterns/*`** — real screens composed from the above.
+- **`Playground/Theme Panel`** — tweak accent color, radius, and appearance
+  live.
+
+The whole system's look is configured in one place — the `<Theme>` in
+`src/main.tsx` (and the Storybook decorator in `.storybook/preview.tsx`).
+
+## Editor setup (VS Code)
+
+Open the folder in VS Code and accept the prompt to install the recommended
+extensions (`.vscode/extensions.json`):
+
+- **Oxc** — surfaces `oxlint` diagnostics inline (this project lints with
+  oxlint, not ESLint).
+- **Prettier** — formats on save (`.prettierrc`).
+- **Figma for VS Code** — the design-to-code bridge (below).
+
+Workspace settings (`.vscode/settings.json`) enable format-on-save and the
+workspace TypeScript version, so everyone gets the same behavior.
+
+## Design-to-code with Figma
+
+This system is Figma-friendly by design. With **Figma Dev Mode** and the
+**Figma for VS Code** extension, the loop is:
+
+1. Open the Figma frame in Dev Mode; inspect specs, variables, and the
+   selected layer's generated code — all inside VS Code.
+2. Build the matching component here using Radix Themes primitives and
+   theme variables, keeping Figma variables and code tokens aligned.
+3. Verify in Storybook side-by-side with the Figma frame.
+
+Because both Figma variables and Radix theme tokens describe the same
+decisions (accent color, radius, spacing scale), keeping them in sync is the
+main design-to-code maintenance task.
+
+## Contributing
+
+New components go through a short RFC-first process — propose (RFC),
+implement on a branch, document, review. See the open pull requests for
+worked examples.

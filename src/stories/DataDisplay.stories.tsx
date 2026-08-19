@@ -1,7 +1,20 @@
 import type { Meta } from '@storybook/react-vite';
 import {
-  Flex, Box, Card, Table, DataList, Avatar, Badge, Callout, Progress, Spinner,
-  Skeleton, Text, Heading, Inset, Code,
+  Flex,
+  Box,
+  Card,
+  Table,
+  DataList,
+  Avatar,
+  Badge,
+  Callout,
+  Progress,
+  Spinner,
+  Skeleton,
+  Text,
+  Heading,
+  Inset,
+  Code,
 } from '@radix-ui/themes';
 
 const meta = { title: 'Radix/Data Display' } satisfies Meta;
@@ -13,7 +26,9 @@ export const Cards = {
       <Card style={{ width: 240 }}>
         <Flex direction="column" gap="1" p="2">
           <Heading size="3">Assay run #4821</Heading>
-          <Text size="2" color="gray">96 samples, no anomalies.</Text>
+          <Text size="2" color="gray">
+            96 samples, no anomalies.
+          </Text>
         </Flex>
       </Card>
       <Card style={{ width: 240 }}>
@@ -37,9 +52,27 @@ export const TableExample = {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        <Table.Row><Table.RowHeaderCell>Bioanalytical A</Table.RowHeaderCell><Table.Cell>96</Table.Cell><Table.Cell><Badge color="green">Approved</Badge></Table.Cell></Table.Row>
-        <Table.Row><Table.RowHeaderCell>Cytometry B</Table.RowHeaderCell><Table.Cell>48</Table.Cell><Table.Cell><Badge color="blue">In review</Badge></Table.Cell></Table.Row>
-        <Table.Row><Table.RowHeaderCell>Assay C</Table.RowHeaderCell><Table.Cell>12</Table.Cell><Table.Cell><Badge color="red">Failed</Badge></Table.Cell></Table.Row>
+        <Table.Row>
+          <Table.RowHeaderCell>Bioanalytical A</Table.RowHeaderCell>
+          <Table.Cell>96</Table.Cell>
+          <Table.Cell>
+            <Badge color="green">Approved</Badge>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.RowHeaderCell>Cytometry B</Table.RowHeaderCell>
+          <Table.Cell>48</Table.Cell>
+          <Table.Cell>
+            <Badge color="blue">In review</Badge>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.RowHeaderCell>Assay C</Table.RowHeaderCell>
+          <Table.Cell>12</Table.Cell>
+          <Table.Cell>
+            <Badge color="red">Failed</Badge>
+          </Table.Cell>
+        </Table.Row>
       </Table.Body>
     </Table.Root>
   ),
@@ -48,9 +81,22 @@ export const TableExample = {
 export const DataListExample = {
   render: () => (
     <DataList.Root>
-      <DataList.Item><DataList.Label>Status</DataList.Label><DataList.Value><Badge color="green">Approved</Badge></DataList.Value></DataList.Item>
-      <DataList.Item><DataList.Label>Run ID</DataList.Label><DataList.Value><Code>#4821</Code></DataList.Value></DataList.Item>
-      <DataList.Item><DataList.Label>Samples</DataList.Label><DataList.Value>96</DataList.Value></DataList.Item>
+      <DataList.Item>
+        <DataList.Label>Status</DataList.Label>
+        <DataList.Value>
+          <Badge color="green">Approved</Badge>
+        </DataList.Value>
+      </DataList.Item>
+      <DataList.Item>
+        <DataList.Label>Run ID</DataList.Label>
+        <DataList.Value>
+          <Code>#4821</Code>
+        </DataList.Value>
+      </DataList.Item>
+      <DataList.Item>
+        <DataList.Label>Samples</DataList.Label>
+        <DataList.Value>96</DataList.Value>
+      </DataList.Item>
     </DataList.Root>
   ),
 };
@@ -76,9 +122,15 @@ export const AvatarsAndBadges = {
 export const Callouts = {
   render: () => (
     <Flex direction="column" gap="3" width="420px">
-      <Callout.Root color="blue"><Callout.Text>Heads up — resets nightly.</Callout.Text></Callout.Root>
-      <Callout.Root color="green"><Callout.Text>Your changes were published.</Callout.Text></Callout.Root>
-      <Callout.Root color="red"><Callout.Text>Upload failed — file too large.</Callout.Text></Callout.Root>
+      <Callout.Root color="blue">
+        <Callout.Text>Heads up — resets nightly.</Callout.Text>
+      </Callout.Root>
+      <Callout.Root color="green">
+        <Callout.Text>Your changes were published.</Callout.Text>
+      </Callout.Root>
+      <Callout.Root color="red">
+        <Callout.Text>Upload failed — file too large.</Callout.Text>
+      </Callout.Root>
     </Flex>
   ),
 };
@@ -88,7 +140,9 @@ export const ProgressAndLoading = {
     <Flex direction="column" gap="4" width="300px">
       <Progress value={25} />
       <Progress value={70} color="green" />
-      <Flex gap="3" align="center"><Spinner /> <Text size="2">Loading…</Text></Flex>
+      <Flex gap="3" align="center">
+        <Spinner /> <Text size="2">Loading…</Text>
+      </Flex>
       <Flex direction="column" gap="2">
         <Skeleton width="100%" height="14px" />
         <Skeleton width="80%" height="14px" />
