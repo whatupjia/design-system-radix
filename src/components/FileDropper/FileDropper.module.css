@@ -1,0 +1,38 @@
+.zone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 2px dashed var(--gray-6);
+  border-radius: var(--radius-4);
+  background: var(--gray-2);
+  color: var(--gray-9);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 120ms, background 120ms;
+}
+.zone[data-size="1"] { padding: var(--space-4); }
+.zone[data-size="2"] { padding: var(--space-6); }
+.zone[data-size="3"] { padding: var(--space-8); }
+
+.zone:hover { border-color: var(--accent-8); background: var(--gray-3); }
+.zone:focus-visible { outline: 2px solid var(--focus-8); outline-offset: 2px; }
+.dragging { border-color: var(--accent-9); background: var(--accent-2); }
+.disabled { opacity: 0.5; cursor: not-allowed; }
+
+.input { position: absolute; inset: 0; opacity: 0; cursor: inherit; }
+.icon { width: 28px; height: 28px; color: var(--gray-9); }
+
+.chip {
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-2);
+  background: var(--gray-3);
+  border-radius: var(--radius-2);
+}
+.chipRemove {
+  display: inline-flex; padding: 2px; border: none; background: transparent;
+  color: var(--gray-9); cursor: pointer; border-radius: var(--radius-1);
+}
+.chipRemove:hover { background: var(--gray-4); color: var(--gray-12); }
