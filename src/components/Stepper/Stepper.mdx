@@ -1,0 +1,40 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as StepperStories from './Stepper.stories';
+
+<Meta of={StepperStories} />
+
+# Stepper
+
+Sequential progress through an ordered set of steps ("step 2 of 4"). Fills a
+gap in Radix Themes, which ships no stepper. Styled with Radix accent
+variables, so the active step uses whatever `accentColor` the Theme is set to.
+
+## When to use
+- A task with a **fixed, ordered sequence** the user moves through: import
+  wizards, onboarding, checkout, guided setup.
+- When showing "where am I / how much is left" reduces anxiety.
+
+## When not to use
+- **Free navigation between sections** — use `Tabs`. A stepper implies
+  forward motion through a sequence; Tabs implies jumping around freely.
+- **A single binary progress value** — use `Progress`.
+
+## Behavior
+Completed steps are clickable to go **back**. You cannot **skip ahead** —
+`onStepClick` only fires for steps before the current one. The constraint is
+in the component, not left to the consumer to enforce.
+
+## Do / Don't
+- **Do** keep step labels short (1–2 words) — they sit on one line.
+- **Don't** use a Stepper for steps a user can complete in any order; that's
+  a Tabs or a checklist, not a sequence.
+
+## Accessibility
+Ordered list with `aria-current="step"` on the active step; navigable steps
+are real buttons with a visible focus ring.
+
+## Examples
+<Canvas of={StepperStories.MidFlow} />
+
+## Props
+<Controls />
